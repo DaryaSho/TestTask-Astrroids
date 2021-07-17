@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { pathHome, pathServices } from './pathService';
+import { pathHome, pathServices } from './pathСonstants';
 import defaultTheme from './theme';
 import HomePage from './views/HomePage';
 import ApplicationLayout from './views/ApplicationLayout';
