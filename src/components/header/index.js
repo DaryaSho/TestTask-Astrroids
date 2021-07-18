@@ -2,20 +2,21 @@ import React from "react";
 import moment from 'moment-timezone';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { makeGetHeaderProps } from './selectors';
 import { loadSelectedDate} from '../../store/actions/startupData';
 import { FORWARD, BACK } from '../../shiftСonstants';
+import { makeGetHeaderProps } from './selectors';
+import { Container, ArrowBack, ArrowForward } from './styled';
 
 function Header(props) {
     const { selectedDateDate, onLoadSelectedDate } = props; 
     debugger;
     return (
-        <div>
-            <button onClick = {() => onLoadSelectedDate(BACK)}>back</button>
-            {moment(selectedDateDate, 'YYYY-MM-DD').format('LL')}   *****   {moment().format('YYYY-MM-DD')}
-            <button onClick = {() => onLoadSelectedDate(FORWARD)}>forward</button>
+        <Container>
+            <ArrowBack src="arrow.svg" alt="" onClick = {() => onLoadSelectedDate(BACK)} />
+            ***** {moment(selectedDateDate, 'YYYY-MM-DD').format('LL')} ***** 
+            <ArrowForward src="arrow.svg" alt="" onClick = {() => onLoadSelectedDate(FORWARD)}/>
             
-        </div>
+        </Container>
     ) 
 }
 
