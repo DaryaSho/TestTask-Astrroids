@@ -11,9 +11,10 @@ function Header(props) {
     debugger;
     return (
         <div>
-            <button onClick = {() => onLoadSelectedDate(FORWARD)}>forward</button>
-            {moment(selectedDateDate, 'YYYY-MM-DD').format('LL')}   *****   {moment().format('YYYY-MM-DD')}
             <button onClick = {() => onLoadSelectedDate(BACK)}>back</button>
+            {moment(selectedDateDate, 'YYYY-MM-DD').format('LL')}   *****   {moment().format('YYYY-MM-DD')}
+            <button onClick = {() => onLoadSelectedDate(FORWARD)}>forward</button>
+            
         </div>
     ) 
 }
