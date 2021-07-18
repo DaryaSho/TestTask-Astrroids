@@ -7,9 +7,11 @@ import PropTypes from 'prop-types';
 
 function Asteroids(props) {
     
-    const { asteroids } = props
+    const { asteroids, filter } = props;
+
     return asteroids && asteroids.map(astrroid => 
     <Link to={`/Details/${astrroid.id}`} key={astrroid.id}>{astrroid.name}
+    {filter}
         <Details astrroid={astrroid}/>
      </Link>)  
     }
@@ -18,6 +20,7 @@ const mapStateToProps = makeGetAsteroidsProps;
 
 Asteroids.propTypes = {
     asteroids: PropTypes.array,
+    filter: PropTypes.string,
 };
 
 export default connect(mapStateToProps)(Asteroids);

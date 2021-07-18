@@ -1,9 +1,10 @@
 import { createStructuredSelector } from 'reselect';
-import { getAsteroidsBySelectedDate } from '../../store/selectors/startupData';
+import { getSortAsteroidsBySelectedDate, getFilter } from '../../store/selectors/startupData';
 
 export function makeGetAsteroidsProps() {
 
   return createStructuredSelector({
-    asteroids: getAsteroidsBySelectedDate,
+    asteroids: getSortAsteroidsBySelectedDate,
+    filter: getFilter,
   });
 }

@@ -1,3 +1,3 @@
-export const pathHome = '/';
-export const pathServices = '/Details/:id';
-export const pathNotFound = '/NotFound';
+export const HOME = '/';
+export const DETAILS = '/Details/:id';
+export const NOT_FOUND = '/NotFound';

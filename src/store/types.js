@@ -1,2 +1,3 @@
 export const SET_ASTEROIDS = 'SET_ASTEROIDS'
 export const SET_SELECTED_DATE = 'SET_SELECTED_DATE'
+export const SET_FILTER = 'SET_FILTER'

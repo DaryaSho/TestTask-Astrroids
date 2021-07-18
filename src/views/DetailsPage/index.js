@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { makeGetAsteroidsProps } from './selectors';
 import PropTypes from 'prop-types';
 import NotFoundPage from '../NotFoundPage';
+import { Link } from 'react-router-dom';
 
 function DetailsPage(props) {
      const { asteroids } = props
@@ -12,8 +13,9 @@ function DetailsPage(props) {
     const asteroid = asteroids.find(ast=>ast.id === id);
     return (
     <div>
-            {asteroid ? <h3>ID: {id} {asteroid.name}</h3> :
-            <NotFoundPage />}
+        <Link to="/"> Go Home</Link>
+        {asteroid ? <h3>ID: {id} {asteroid.name}</h3> :
+        <NotFoundPage />}
     </div>
     ) 
 }

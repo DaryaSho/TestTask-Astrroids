@@ -1,11 +1,18 @@
 import { createActions } from 'redux-actions';
 import moment from 'moment-timezone';
 import { getAsteroids } from '../../services/asterroids';
-import { getSelectedDate, getAsteroids as getLoadedAsteroids } from '../selectors/startupData'; 
-import { SET_ASTEROIDS, SET_SELECTED_DATE } from '../types';
+import { getSelectedDate, getAsteroids as getLoadedAsteroids, getAsteroidsBySelectedDate } from '../selectors/startupData'; 
+import { SET_ASTEROIDS, SET_SELECTED_DATE, SET_FILTER } from '../types';
 import { FORWARD } from '../../shiftСonstants';
 
-export const { setAsteroids, setSelectedDate } = createActions(SET_ASTEROIDS, SET_SELECTED_DATE);
+export const {
+  setAsteroids,
+  setSelectedDate, 
+  setFilter
+   } = createActions(
+  SET_ASTEROIDS,
+  SET_SELECTED_DATE,
+  SET_FILTER);
 
 export const loadAsteroids = () => async(dispatch, getState) => {
     const state = getState();
@@ -35,4 +42,8 @@ export const getDate = (date, shift) => {
   return  shift === FORWARD ? 
     moment(date, "YYYY-MM-DD").add(1, 'days').format('YYYY-MM-DD'):
     moment(date, 'YYYY-MM-DD').subtract(1, "days").format('YYYY-MM-DD');
+}
+
+export const loadSetFilter = (key) => (dispatch) => {
+    dispatch(setFilter(key));
 }
