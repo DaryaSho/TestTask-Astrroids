@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HOME } from '../../pathСonstants';
+import { Title, Text } from './styled';
 const NotFoundPage = () => (
   <div>
-    <h1>404 - Not Found!</h1>
+    <Title>404</Title>
+    <Title>Not Found!</Title>
     <Link to={HOME}>
-      Go Home
+      <Text>Go Home</Text>
     </Link>
   </div>
 );
