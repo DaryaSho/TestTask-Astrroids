@@ -8,7 +8,6 @@ import { makeGetHeaderProps } from './selectors';
 import { Container, ArrowBack, ArrowForward } from './styled';
 function Header(props) {
     const { selectedDateDate, onLoadSelectedDate } = props; 
-    debugger;
     return (
         <Container>
             <ArrowBack src="arrow.svg" alt="" onClick = {() => onLoadSelectedDate(BACK)} />

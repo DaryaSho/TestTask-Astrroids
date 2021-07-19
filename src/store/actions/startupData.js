@@ -1,7 +1,7 @@
 import { createActions } from 'redux-actions';
 import moment from 'moment-timezone';
 import { getAsteroids } from '../../services/asterroids';
-import { getSelectedDate, getAsteroids as getLoadedAsteroids, getAsteroidsBySelectedDate } from '../selectors/startupData'; 
+import { getSelectedDate, getAsteroids as getLoadedAsteroids } from '../selectors/startupData'; 
 import { SET_ASTEROIDS, SET_SELECTED_DATE, SET_FILTER } from '../types';
 import { FORWARD } from '../../shiftСonstants';
 

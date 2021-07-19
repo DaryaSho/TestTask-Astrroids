@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../common/styled';
 
 export const Container = styled.div`
   height: 80px;

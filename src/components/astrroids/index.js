@@ -8,7 +8,7 @@ import SortIcon from '../sortIcon';
 
 function Asteroids(props) {
     
-    const { asteroids, filter } = props;
+    const { asteroids } = props;
 
     return asteroids && asteroids.map(astrroid =>
     

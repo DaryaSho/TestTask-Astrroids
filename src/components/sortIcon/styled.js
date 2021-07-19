@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../common/styled';
 
 export const ArrowUp = styled.img.attrs({ src: 'right-arrow.svg' })`
   transform: rotate(270deg);

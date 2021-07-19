@@ -5,7 +5,7 @@ import Header from '../../components/header';
 import SortContainer from '../../components/sortContainer';
 import { connect } from 'react-redux';
 import { makeGetHomePageProps } from './selectors';
-import { AsteroidsContainer } from './styled';
+import { AsteroidsContainer, Title } from './styled';
 
 
 function HomePage(props) {
@@ -15,14 +15,16 @@ function HomePage(props) {
                 
             {asteroids.length === 0 ? 
             
-            <img src="spinner.gif" alt=""></img> :
-            <>
+            <div>
+                <img src="spinner.gif" alt="" />
+                <Title>Please wait</Title></div>:
+            <div>
                 <Header />  
                 <SortContainer />
                 <AsteroidsContainer>
                     <Asteroids />
                 </AsteroidsContainer>
-            </>
+            </div>
                 
              }        
         </div>

@@ -14,7 +14,6 @@ import {
 
 function SortContainer(props) {
     const { onLoadSetFilter } = props; 
-    debugger;
     return (
         <Container>
             <div onClick = {() => onLoadSetFilter(BY_NAME)}>
