@@ -5,6 +5,7 @@ import Header from '../../components/header';
 import SortContainer from '../../components/sortContainer';
 import { connect } from 'react-redux';
 import { makeGetHomePageProps } from './selectors';
+import { AsteroidsContainer } from './styled';
 
 
 function HomePage(props) {
@@ -18,7 +19,9 @@ function HomePage(props) {
             <>
                 <Header />  
                 <SortContainer />
-                <Asteroids />
+                <AsteroidsContainer>
+                    <Asteroids />
+                </AsteroidsContainer>
             </>
                 
              }        

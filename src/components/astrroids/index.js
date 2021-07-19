@@ -1,18 +1,20 @@
 import React from "react";
-import Details from '../details';
+import PreviewAsteroid from '../previewAsteroid';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { makeGetAsteroidsProps } from './selectors';
 import PropTypes from 'prop-types';
+import { Link } from './styled';
+import SortIcon from '../sortIcon';
 
 function Asteroids(props) {
     
     const { asteroids, filter } = props;
 
-    return asteroids && asteroids.map(astrroid => 
-    <Link to={`/Details/${astrroid.id}`} key={astrroid.id}>{astrroid.name}
-    {filter}
-        <Details astrroid={astrroid}/>
+    return asteroids && asteroids.map(astrroid =>
+    
+    <Link to={`/Details/${astrroid.id}`} key={astrroid.id}>
+        Name: {astrroid.name} <SortIcon />
+        <PreviewAsteroid astrroid={astrroid}/>
      </Link>)  
     }
 

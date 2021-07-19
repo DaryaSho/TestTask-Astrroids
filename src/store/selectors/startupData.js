@@ -36,9 +36,9 @@ export const getAsteroidsBySelectedDate = createSelector(
         case BY_ID_REV:
           return asteroids.sort(sortByKey('id')).reverse();
         case BY_SIZE:
-          return asteroids.sort(sortByKey('estimated_diameter.kilometers.estimated_diameter_max'));
+          return asteroids.sort(sortByKey('estimated_diameter.meters.estimated_diameter_max'));
         case BY_SIZE_REV:
-          return asteroids.sort(sortByKey('estimated_diameter.kilometers.estimated_diameter_min')).reverse();
+          return asteroids.sort(sortByKey('estimated_diameter.meters.estimated_diameter_min'));
       }
     }
   );

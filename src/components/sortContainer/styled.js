@@ -7,15 +7,19 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  font-family: 'Montserrat';
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.textColor};
   font-size: 34px;
+  div{
+      cursor:pointer;
+  }
   @media ${device.mobileL} {
     height: 40px;
     font-size: 10px;
   }
 `;
 
-export const ArrowUp= styled.img.attrs({ src: 'right-arrow.svg' })`
+export const ArrowUp = styled.img.attrs({ src: 'right-arrow.svg' })`
   transform: rotate(270deg);
   width: 30px;
   height: 30px;
