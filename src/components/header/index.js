@@ -6,12 +6,13 @@ import { loadSelectedDate } from '../../store/actions/startupData';
 import { FORWARD, BACK } from '../../shiftСonstants';
 import { makeGetHeaderProps } from './selectors';
 import { Container, ArrowBack, ArrowForward } from './styled';
+import { DATE_FORMAT } from '../../dateConstans';
 function Header(props) {
-    const { selectedDateDate, onLoadSelectedDate } = props; 
+    const { selectedDate, onLoadSelectedDate } = props; 
     return (
         <Container>
             <ArrowBack src="arrow.svg" alt="" onClick = {() => onLoadSelectedDate(BACK)} />
-            ***** {moment(selectedDateDate, 'YYYY-MM-DD').format('LL')} ***** 
+            ***** {moment(selectedDate, DATE_FORMAT).format('LL')} ***** 
             <ArrowForward src="arrow.svg" alt="" onClick = {() => onLoadSelectedDate(FORWARD)}/>
         </Container>
     ) 
@@ -20,7 +21,7 @@ function Header(props) {
 const mapStateToProps = makeGetHeaderProps;
 
 Header.propTypes = {
-    selectedDateDate: PropTypes.string,
+    selectedDate: PropTypes.string,
     onLoadSelectedDate: PropTypes.func,
 };
 

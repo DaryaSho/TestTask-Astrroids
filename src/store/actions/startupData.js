@@ -4,6 +4,8 @@ import { getAsteroids } from '../../services/asterroids';
 import { getSelectedDate, getAsteroids as getLoadedAsteroids } from '../selectors/startupData'; 
 import { SET_ASTEROIDS, SET_SELECTED_DATE, SET_FILTER } from '../types';
 import { FORWARD } from '../../shiftСonstants';
+import { DATE_FORMAT } from '../../dateConstans';
+
 
 export const {
   setAsteroids,
@@ -17,8 +19,8 @@ export const {
 export const loadAsteroids = () => async(dispatch, getState) => {
     const state = getState();
     const selectedDate = state.startupData?.selectedDate;
-    const startDate = moment(selectedDate, 'YYYY-MM-DD').subtract(3, "days").format('YYYY-MM-DD');
-    const endDate = moment(startDate, "YYYY-MM-DD").add(7, 'days').format('YYYY-MM-DD');
+    const startDate = moment(selectedDate, DATE_FORMAT).subtract(3, 'days').format(DATE_FORMAT);
+    const endDate = moment(startDate, DATE_FORMAT).add(7, 'days').format(DATE_FORMAT);
     const asteroids = await getAsteroids(startDate, endDate);
     dispatch(setAsteroids(asteroids));
 };
@@ -26,10 +28,10 @@ export const loadAsteroids = () => async(dispatch, getState) => {
 export const loadSelectedDate = (shift) => async(dispatch, getState) => {
     const state = getState();
     let selectedDate = getSelectedDate(state);
-    selectedDate = getDate(selectedDate, shift)
+    selectedDate = shiftDate(selectedDate, shift)
     dispatch(setSelectedDate(selectedDate));
 
-    const potentiallyNextSelectedDate = getDate(selectedDate, shift)
+    const potentiallyNextSelectedDate = shiftDate(selectedDate, shift)
 
     const asteroids = getLoadedAsteroids(state);
 
@@ -38,10 +40,10 @@ export const loadSelectedDate = (shift) => async(dispatch, getState) => {
     }
   }
 
-export const getDate = (date, shift) => {
+export const shiftDate = (date, shift) => {
   return  shift === FORWARD ? 
-    moment(date, "YYYY-MM-DD").add(1, 'days').format('YYYY-MM-DD'):
-    moment(date, 'YYYY-MM-DD').subtract(1, "days").format('YYYY-MM-DD');
+    moment(date, DATE_FORMAT).add(1, 'days').format(DATE_FORMAT):
+    moment(date, DATE_FORMAT).subtract(1, 'days').format(DATE_FORMAT);
 }
 
 export const loadSetFilter = (key) => (dispatch) => {

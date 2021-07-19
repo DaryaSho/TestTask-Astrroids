@@ -1,5 +1,5 @@
 import React from "react";
-import Asteroids from '../../components/astrroids';
+import Asteroids from '../../components/asteroid';
 import PropTypes from 'prop-types';
 import Header from '../../components/header';
 import SortContainer from '../../components/sortContainer';

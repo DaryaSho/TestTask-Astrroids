@@ -29,9 +29,9 @@ function SortIcon(props) {
           case BY_ID_REV:
             return <>I<ArrowDown/></>;
           case BY_SIZE:
-            return <>S<ArrowUp/></>;
+            return <>M<ArrowUp/></>;
           case BY_SIZE_REV:
-            return <>S<ArrowDown/></>;
+            return <>M<ArrowDown/></>;
         }
     }
 

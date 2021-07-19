@@ -32,11 +32,11 @@ function SortContainer(props) {
                 Id <ArrowDown alt=""  />
             </div>
             <div onClick = {() => onLoadSetFilter(BY_SIZE)}>
-                Size <ArrowUp alt=""  />
+                Absolute Magnitude <ArrowUp alt=""  />
             </div>
 
             <div onClick = {() => onLoadSetFilter(BY_SIZE_REV)}>
-                Size<ArrowDown alt=""  />
+                Absolute Magnitude <ArrowDown alt=""  />
             </div>
 
 

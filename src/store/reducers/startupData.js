@@ -4,6 +4,7 @@ import {SET_ASTEROIDS, SET_SELECTED_DATE, SET_FILTER} from '../types';
 import { 
   BY_ID,
   } from '../../filterConstans';
+  import { DATE_FORMAT } from '../../dateConstans';
 
 export default handleActions(
   {
@@ -11,5 +12,5 @@ export default handleActions(
     [SET_SELECTED_DATE]: (state, action) => ({ ...state, selectedDate: action.payload }),
     [SET_FILTER]: (state, action) => ({ ...state, filter: action.payload }),
   },
-  { language: 'en-US', selectedDate:  moment().format('YYYY-MM-DD'), asteroids: {}, filter: BY_ID},
+  { language: 'en-US', selectedDate:  moment().format(DATE_FORMAT), asteroids: {}, filter: BY_ID},
 );

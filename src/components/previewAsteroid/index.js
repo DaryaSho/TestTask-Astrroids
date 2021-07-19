@@ -4,18 +4,18 @@ import { Text, Container } from './styled';
 
 function PreviewAsteroid(props) {
 
-    const { astrroid } = props;
-    const estimated_diameter_kil = astrroid.estimated_diameter.kilometers;
+    const { asteroid } = props;
+    const estimated_diameter_kil = asteroid.estimated_diameter.kilometers;
     return (
     <Container>
-        <Text>id - {astrroid.id}</Text>
-        <Text>estimated diameter - min {estimated_diameter_kil.estimated_diameter_min.toFixed(2)}km - max {estimated_diameter_kil.estimated_diameter_max.toFixed(2)}km</Text>
+        <Text>id - {asteroid.id}</Text>
+        <Text>absolute magnitude - {asteroid.absolute_magnitude_h.toFixed(2)}h</Text>
     </Container>
     );
     
 }
 
 PreviewAsteroid.propTypes = {
-    astrroid: PropTypes.object
+    asteroid: PropTypes.object
   };
 export default PreviewAsteroid

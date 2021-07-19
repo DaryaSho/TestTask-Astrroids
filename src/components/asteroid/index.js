@@ -10,11 +10,11 @@ function Asteroids(props) {
     
     const { asteroids } = props;
 
-    return asteroids && asteroids.map(astrroid =>
+    return asteroids && asteroids.map(asteroid =>
     
-    <Link to={`/Details/${astrroid.id}`} key={astrroid.id}>
-        Name: {astrroid.name} <SortIcon />
-        <PreviewAsteroid astrroid={astrroid}/>
+    <Link to={`/Details/${asteroid.id}`} key={asteroid.id}>
+        Name: {asteroid.name} <SortIcon />
+        <PreviewAsteroid asteroid={asteroid}/>
      </Link>)  
     }
 
@@ -22,7 +22,6 @@ const mapStateToProps = makeGetAsteroidsProps;
 
 Asteroids.propTypes = {
     asteroids: PropTypes.array,
-    filter: PropTypes.string,
 };
 
 export default connect(mapStateToProps)(Asteroids);

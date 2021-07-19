@@ -5,6 +5,6 @@ import { getSelectedDate } from '../../store/selectors/startupData';
 export function makeGetHeaderProps() {
 
   return createStructuredSelector({
-    selectedDateDate: getSelectedDate,
+    selectedDate: getSelectedDate,
   });
 }

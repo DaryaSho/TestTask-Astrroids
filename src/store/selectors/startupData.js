@@ -28,17 +28,17 @@ export const getAsteroidsBySelectedDate = createSelector(
     (filter, asteroids) => {
       switch (filter) {
         case BY_NAME:
-          return asteroids.sort(sortByKey('name'));
+          return [].concat(asteroids.sort(sortByKey('name')));
         case BY_NAME_REV:
-          return asteroids.sort(sortByKey('name')).reverse();
+          return [].concat(asteroids.sort(sortByKey('name')).reverse());
         case BY_ID:
-          return asteroids.sort(sortByKey('id'));
+          return [].concat(asteroids.sort(sortByKey('id')));
         case BY_ID_REV:
-          return asteroids.sort(sortByKey('id')).reverse();
+          return [].concat(asteroids.sort(sortByKey('id')).reverse());
         case BY_SIZE:
-          return asteroids.sort(sortByKey('estimated_diameter.meters.estimated_diameter_max'));
+          return [].concat(asteroids.sort(sortByKey('absolute_magnitude_h')));
         case BY_SIZE_REV:
-          return asteroids.sort(sortByKey('estimated_diameter.meters.estimated_diameter_min'));
+          return [].concat(asteroids.sort(sortByKey('absolute_magnitude_h')).reverse());
       }
     }
   );
